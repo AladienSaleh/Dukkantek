@@ -5,11 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Dukkantek.Domain\Dukkantek.Domain.csproj" />
     <ProjectReference Include="..\Dukkantek.Shared\Dukkantek.Shared.csproj" />
   </ItemGroup>
 
 
 	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="11.0.1" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.5" />
 		<PackageReference Include="Microsoft.Extensions.Configuration" Version="6.0.1" />
@@ -17,7 +19,6 @@
 	</ItemGroup>
 
   <ItemGroup>
-    <Folder Include="AutoMappings\" />
     <Folder Include="Migrations\" />
   </ItemGroup>
 

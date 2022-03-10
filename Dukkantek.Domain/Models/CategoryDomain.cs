@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Dukkantek.Domain.Models
@@ -14,6 +15,7 @@ namespace Dukkantek.Domain.Models
 
         public string Description { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<ProductCategoryDomain> CategoryProducts { get; set; }
     }
 }

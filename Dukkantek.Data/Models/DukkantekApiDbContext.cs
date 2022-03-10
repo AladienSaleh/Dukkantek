@@ -9,6 +9,7 @@ namespace Dukkantek.Data.Models
 {
     public class DukkantekApiDbContext : DbContext
     {
+        #region Constructor
         public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<DukkantekApiDbContext>
         {
             public DukkantekApiDbContext CreateDbContext(string[] args)
@@ -35,18 +36,23 @@ namespace Dukkantek.Data.Models
 
             return MsSQL(new DbContextOptionsBuilder<DukkantekApiDbContext>()).Options;
         }
+        #endregion
 
+        #region Public Members
         public DbSet<Product> Products { get; set; }
 
         public DbSet<ProductCategory> ProductCategories { get; set; }
 
         public DbSet<Category> Categories { get; set; }
+        #endregion
 
+        #region Private members 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<ProductCategory>()
                 .HasKey(PC => new { PC.ProductId, PC.CategoryId });
         }
+        #endregion
 
     }
 }

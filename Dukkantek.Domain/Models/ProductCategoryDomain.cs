@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Dukkantek.Domain.Models
@@ -14,6 +15,7 @@ namespace Dukkantek.Domain.Models
          
         public CategoryDomain Category { get; set; }  
 
+        [JsonIgnore]
         public ProductDomain Product { get; set; }
     }
 }

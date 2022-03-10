@@ -1,18 +1,21 @@
-﻿using Dukkantek.Shared.Enums;
+﻿using Dukkantek.Domain.Models;
+using Dukkantek.Shared.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dukkantek.Domain.Contracts.Manager
+namespace Dukkantek.Domain.Pontracts.Manager
 {
     public interface IProductManager 
     {
         Task<int> GetProductCountByStatusAsync(Status productStatus);
 
-        Task ChangeProductStatusAsync(Status productStatus);
+        Task ChangeProductStatusAsync(int productId, Status newStatus);
 
         Task SellProductAsync(int productId);
+
+        Task<ProductDomain> AddProductForTest(ProductDomain newProduct, CategoryDomain newCategory);
     }
 }

@@ -1,5 +1,6 @@
-﻿using Dukkantek.Domain.Contracts.Manager;
-using Dukkantek.Domain.Contracts.Provider;
+﻿using Dukkantek.Domain.Pontracts.Manager;
+using Dukkantek.Domain.Pontracts.Provider;
+using Dukkantek.Domain.Models;
 using Dukkantek.Shared.Enums;
 using System;
 using System.Collections.Generic;
@@ -25,9 +26,9 @@ namespace Dukkantek.Managers.Product
         #endregion
 
         #region Public methods
-        public async Task ChangeProductStatusAsync(Status productStatus)
+        public async Task ChangeProductStatusAsync(int productId, Status newStatus)
         {
-            await productProvider.ChangeProductStatusAsync(productStatus);
+            await productProvider.ChangeProductStatusAsync(productId,newStatus);
         }
 
         public async Task<int> GetProductCountByStatusAsync(Status productStatus)
@@ -39,6 +40,12 @@ namespace Dukkantek.Managers.Product
         {
             await productProvider.SellProductAsync(productId);
         }
+
+        public async Task<ProductDomain> AddProductForTest(ProductDomain newProduct, CategoryDomain newCategory)
+        {
+            return await productProvider.AddProductForTest(newProduct, newCategory);
+        }
+
         #endregion
     }
 }
