@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dukkantek.Data.Models
+namespace Dukkantek.Data.Models.Products
 {
     public class Category
     {

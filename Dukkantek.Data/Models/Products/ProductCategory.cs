@@ -1,15 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Dukkantek.Data.Models
+namespace Dukkantek.Data.Models.Products
 {
     public class ProductCategory
     {
-        [Key]
         public int CategoryId { get; set; }
-
-        [Key]
+         
         public int ProductId { get; set; }
+
 
         [ForeignKey(nameof(CategoryId))]
         public Category Category { get; set; }

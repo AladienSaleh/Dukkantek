@@ -1,3 +1,4 @@
+using Dukkantek.DI;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -26,6 +27,7 @@ namespace Dukkantek.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            DependencyHandler.Handel(services);
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
