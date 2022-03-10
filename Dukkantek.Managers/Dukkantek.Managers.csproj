@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Dukkantek.Domain\Dukkantek.Domain.csproj" />
+    <ProjectReference Include="..\Dukkantek.Providers\Dukkantek.Providers.csproj" />
+    <ProjectReference Include="..\Dukkantek.Shared\Dukkantek.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
