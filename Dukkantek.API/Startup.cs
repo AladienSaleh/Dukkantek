@@ -53,6 +53,7 @@ namespace Dukkantek.API
                 });
 
             }
+            app.UseMiddleware<TransactionUnitMiddleware>();
 
             app.UseHttpsRedirection();
 

@@ -1,11 +1,8 @@
 ﻿using Dukkantek.Domain.Pontracts.Manager;
 using Dukkantek.Managers.Product;
+using Dukkantek.Shared.UnitOfWork;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Dukkantek.Managers.UnitOfWork;
 
 namespace Dukkantek.DI.Managers
 {
@@ -14,6 +11,7 @@ namespace Dukkantek.DI.Managers
         internal static void Handel(IServiceCollection services, Microsoft.Extensions.Configuration.IConfiguration configuration)
         {
             services.Add(new ServiceDescriptor(typeof(IProductManager), typeof(ProductManager), ServiceLifetime.Scoped));
+            services.Add(new ServiceDescriptor(typeof(IUnitOfWorkManager), typeof(UnitOfWorkManager), ServiceLifetime.Scoped));
         }
     }
 }
