@@ -4,6 +4,7 @@ using Dukkantek.Domain.Models;
 using Dukkantek.Shared.Enums;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace Dukkantek.API.Controllers
 {
@@ -68,6 +69,15 @@ namespace Dukkantek.API.Controllers
             newProduct = await productManager.AddProductForTest(newProduct,newCategory);
 
             return Ok(new { Product = newProduct });
+        }
+
+        [HttpGet]
+        [Route("GetProductList")]
+        public async Task<ActionResult> GetProductList(int pageSize=0, int pageNumber=0)
+        {
+            var ( ProductList,TotalCount) = await productManager.GetProductList(pageSize, pageNumber);
+
+            return Ok(new { ProductList, TotalCount });
         }
 
     }

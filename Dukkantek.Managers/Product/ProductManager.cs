@@ -46,6 +46,10 @@ namespace Dukkantek.Managers.Product
             return await productProvider.AddProductForTest(newProduct, newCategory);
         }
 
+        public async Task<(List<ProductDomain>, int)> GetProductList(int pageSize, int pageNumber)
+        { 
+            return await productProvider.GetProductList(pageSize, pageNumber);
+        }
         #endregion
     }
 }

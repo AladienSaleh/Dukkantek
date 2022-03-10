@@ -17,5 +17,7 @@ namespace Dukkantek.Domain.Pontracts.Manager
         Task SellProductAsync(int productId);
 
         Task<ProductDomain> AddProductForTest(ProductDomain newProduct, CategoryDomain newCategory);
+
+        Task<(List<ProductDomain>, int)> GetProductList(int pageSize, int pageNumber);
     }
 }
