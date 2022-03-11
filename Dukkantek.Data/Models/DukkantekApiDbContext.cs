@@ -1,4 +1,5 @@
-﻿using Dukkantek.Data.Models.Products;
+﻿using Dukkantek.Data.Models.Configuration;
+using Dukkantek.Data.Models.Products;
 using Dukkantek.Shared.Constants;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
@@ -51,6 +52,9 @@ namespace Dukkantek.Data.Models
         {
             modelBuilder.Entity<ProductCategory>()
                 .HasKey(PC => new { PC.ProductId, PC.CategoryId });
+
+
+            ModelBuilderExtensions.SeedData(modelBuilder);
         }
         #endregion
 
