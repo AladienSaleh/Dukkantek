@@ -28,17 +28,17 @@ Notes:
 4) logs stored in c:\temp\Dukkantek\
 
 Technology used:
--Clean code
--DDD
--Layers manager providers
--Model first
--Swagger
--MiniProfiler
--Docker 
-- Automapper
--Dependency injection
--EF core
--CROS
--request transaction.
--Nlog file logging 
+*Clean code
+*DDD
+*Layers manager providers
+*Model first
+*Swagger
+*MiniProfiler
+*Docker 
+* Automapper
+*Dependency injection
+*EF core
+*CROS
+*request transaction.
+*Nlog file logging 
  
