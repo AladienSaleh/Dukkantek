@@ -22,8 +22,8 @@ No UI needed just the APIs
 
 
 **Notes**
-1) access swagger throw /swagger/index.html
-2) access miniprofiler throw /profiler/results-index
+1) access swagger through  /swagger/index.html
+2) access miniprofiler through  /profiler/results-index
 3) Data Preseeded.
 4) logs stored in c:\temp\Dukkantek\
 
