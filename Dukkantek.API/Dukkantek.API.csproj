@@ -29,4 +29,10 @@
 		<ProjectReference Include="..\Dukkantek.Shared\Dukkantek.Shared.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Content Update="nlog.config">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Content>
+	</ItemGroup>
+
 </Project>

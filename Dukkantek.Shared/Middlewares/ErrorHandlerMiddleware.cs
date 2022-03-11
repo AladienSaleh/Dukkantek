@@ -1,5 +1,7 @@
 ﻿using Dukkantek.Shared.Exceptions;
 using Microsoft.AspNetCore.Http;
+using NLog;
+using NLog.Web;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -45,7 +47,11 @@ namespace Dukkantek.Shared.Middlewares
                         response.StatusCode = (int)HttpStatusCode.InternalServerError;
                         break;
                 }
-                //TODO: write exception
+
+                var logger = NLog.LogManager.Setup().LoadConfigurationFromAppSettings().GetCurrentClassLogger();
+
+                logger.Error(error, error.Message);
+
                 var result = JsonSerializer.Serialize(new { message = error?.Message });
                 await response.WriteAsync(result);
             }

@@ -5,6 +5,7 @@ using Dukkantek.Shared.Enums;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using Microsoft.Extensions.Logging;
 
 namespace Dukkantek.API.Controllers
 {
@@ -13,12 +14,15 @@ namespace Dukkantek.API.Controllers
     public class ProductsController : ControllerBase
     {
         private readonly IProductManager productManager;
+        private readonly ILogger<ProductsController> logger;
 
         public ProductsController(
-            IProductManager productManager
+            IProductManager productManager,
+            ILogger<ProductsController> logger
             )
         {
             this.productManager = productManager;
+            this.logger = logger;
         }
 
         [HttpGet]
@@ -43,6 +47,8 @@ namespace Dukkantek.API.Controllers
         [Route("SellProductAsync")]
         public async Task<ActionResult> SellProductAsync(int productId)
         {
+            logger.LogInformation("Test");
+            logger.LogError("Test");
             await productManager.SellProductAsync(productId);
 
             return Ok();
